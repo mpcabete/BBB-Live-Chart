@@ -1,0 +1,25 @@
+{
+  "name": "bbb-live-chart",
+  "version": "1.0.0",
+  "description": "A Bar Chart Race that is dynamically populated with the data collected from Twitter's API and is always up to date.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpcabete/BBB-Live-Chart.git"
+  },
+  "author": "Mateus P. Cabete",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpcabete/BBB-Live-Chart/issues"
+  },
+  "homepage": "https://github.com/mpcabete/BBB-Live-Chart#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4"
+  }
+}
