@@ -40,7 +40,16 @@
 -criei o repositorio
 -upei no heroku
 -adicionei morgan pros logs e helmet pra segurança
+    -removi helmet
     []helmet tem q ser configurado melhor pa conseguir pegar as biblo por cdn
+
+=======================================================================(19/2)
+-criei uma conta no google analytics e adicionei a tag ao site
+-tirei a gambiarra dos csv e papaparse
+    []trocar nomes time e row_data
+-dei uma geralzinha no codigo, resolvi varios bug q surgiram
+    []arrumar o top_n
+
 =======================================================================
 [x]decidir se dexo 1 info por dia ou em outro intervalo
     -2h
