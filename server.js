@@ -10,7 +10,7 @@ const uri = `mongodb+srv://${credentials}@twittercluster.au6dy.mongodb.net/test?
 
 const app = express()
 app.use(helmet())
-app.use(morgan('combined'))
+app.use(morgan('tiny'))
 app.use(express.static('public'))
 
 const client = new MongoClient(uri, {useUnifiedTopology: true, useNewUrlParser: true });
