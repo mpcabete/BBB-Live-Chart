@@ -35,7 +35,12 @@
 -identifiquei o problema
 -energia desligou e o ip white listed do banco de dados mudou
 -fiz uma função que faz uma interpolação dos dados com intervalo de tempo irregular pra intervalos fixos
-
+=======================================================================(17/2)
+-coploquei o usuario e senha do mongo em uma variavel no enviroment
+-criei o repositorio
+-upei no heroku
+-adicionei morgan pros logs e helmet pra segurança
+    []helmet tem q ser configurado melhor pa conseguir pegar as biblo por cdn
 =======================================================================
 [x]decidir se dexo 1 info por dia ou em outro intervalo
     -2h
@@ -61,7 +66,7 @@
     -keyframes
         -descobrir como funciona isso no d3
 
-[]criar .env
+[x]criar .env
 []upar em um server
 
 
@@ -76,4 +81,5 @@
         -minhas infos
     []deixar uma animação dele subindo devagarinho falsa quanto terminar a a nimaçao
     []tirar os com value 0 do grafico
+    []colocar um mostradorzinho com a data q vai movendo pela timeline
     
