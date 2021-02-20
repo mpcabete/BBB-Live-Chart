@@ -64,7 +64,7 @@
     
 
     
-    let top_n = 16
+    let top_n = 14
 
     let tickDuration = 200
 

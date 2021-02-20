@@ -70,14 +70,14 @@
 [x]servir
     flask?
     x - express    
-[]configurar função do d3 pra aceitar os dados em json
-[]resolver problema da frequencia de samples
+[x]configurar função do d3 pra aceitar os dados em json
+[x]resolver problema da frequencia de samples
     -gerar samples artificiais
     -keyframes
         -descobrir como funciona isso no d3
 
 [x]criar .env
-[]upar em um server
+[x]upar em um server
 
 
 -extras:

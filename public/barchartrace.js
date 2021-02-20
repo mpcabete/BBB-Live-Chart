@@ -270,11 +270,13 @@ function createBarChartRace(data, top_n, tickDuration) {
 
         bars.exit()
             .transition()
-            .duration(tickDuration)
-            .ease(d3.easeLinear)
+            .duration(tickDuration-50)
+            // .ease(d3.easeLinear)
             .attr('width', d => x(d.value) - x(0))
-            .attr('y', d => y(top_n + 1) + barPadding / 2)
-            .remove();
+            .attr('y', () => y(top_n + 1) + barPadding / 2)
+            .remove()
+
+
 
         // update labels
         let labels = svg.selectAll('.label').data(row_data, d => d.key);
@@ -298,7 +300,7 @@ function createBarChartRace(data, top_n, tickDuration) {
 
         labels.exit()
             .transition()
-            .duration(tickDuration)
+            .duration(tickDuration-50)
             .ease(d3.easeLinear)
             .attr('x', d => x(d.value) - 8)
             .attr('y', d => y(top_n + 1)).remove();
@@ -337,7 +339,7 @@ function createBarChartRace(data, top_n, tickDuration) {
         valueLabels
             .exit()
             .transition()
-            .duration(tickDuration)
+            .duration(tickDuration-50)
             .ease(d3.easeLinear)
             .attr('x', d => x(d.value) + 5)
             .attr('y', d => y(top_n + 1)).remove()
