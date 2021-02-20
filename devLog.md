@@ -49,8 +49,19 @@
     []trocar nomes time e row_data
 -dei uma geralzinha no codigo, resolvi varios bug q surgiram
     []arrumar o top_n
-    []resolver bug do undefined
-
+    [x]resolver bug do undefined
+========================================================================(20/2)
+-resolvi bug do undefined
+    -o length do loop tava 'data' e n normalized data
+-resolvi problema do .exit n remover
+    -.attr('y', d => y(top_n + 1) + barPadding / 2)
+    -.attr('y', () =>{ y(top_n + 1) + barPadding / 2})
+    -colocar {} na sintaxe resolveu, n sei pq
+    -na vdd n resolveu
+    -diminuir 50ms na transição antes do remove resolveu
+    -.duration(tickDuration-50)
+[x]ver pq na função dos keyframes ele n cria até o ultimo
+    - >= no for loop
 =======================================================================
 [x]decidir se dexo 1 info por dia ou em outro intervalo
     -2h

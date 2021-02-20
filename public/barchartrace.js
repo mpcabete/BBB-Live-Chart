@@ -31,14 +31,14 @@ function createBarChartRace(data, top_n, tickDuration) {
 
         // gerar os keyframes com os dados de cada um
         // len = tickDuration * ticks/fps
-        const frames = 59
+        const frames = 120
 
         let timeMinMax = d3.extent(domain)
         let timeScale = d3.scaleTime(timeMinMax, [0, frames])
 
 
         let keyframes = []
-        for (let i = 0; i < frames; i++) {
+        for (let i = 0; i <= frames; i++) {
 
             let date = timeScale.invert(i)
             let frame = {
@@ -160,7 +160,13 @@ function createBarChartRace(data, top_n, tickDuration) {
 
 
     let timeAxis = d3.axisBottom()
-        .ticks(5)
+    //colocar ticks = dias
+        .ticks(d3.timeHour.every(24))
+        .tickFormat((d,i)=>{
+            if(i%3==0){
+                return d3.timeFormat('%d/%m')(d)
+            }
+    })
         .scale(t);
 
     let x = d3.scaleLinear()
@@ -217,18 +223,18 @@ function createBarChartRace(data, top_n, tickDuration) {
         .attr('y', d => y(d.rank) + ((y(1) - y(0)) / 2) + 1)
         .text(d => d3.format(',.0f')(d.lastValue)); //lastvalue?
 
- 
-    timeline_svg.append('g')
-        .attr('class', 'axis tAxis')
-        .attr('transform', `translate(0, 20)`)
-        .call(timeAxis);
-
-    timeline_svg.append('rect')
+        timeline_svg.append('rect')
         .attr('class', 'progressBar')
+        .attr('fill','#1DA1F2')
         .attr('transform', `translate(${marginTimeAxis}, 20)`)
-        .attr('height', 2)
+        .attr('height', 5)
         .attr('width', 0);
 
+        timeline_svg.append('g')
+            .attr('class', 'axis tAxis')
+            .attr('transform', `translate(0, 20)`)
+            .call(timeAxis);
+        
     let timeText = svg.append('text')
         .attr('class', 'timeText')
         .attr('x', width - margin.right)
@@ -372,8 +378,8 @@ function createBarChartRace(data, top_n, tickDuration) {
         i += 1
 
 
+        return interval
     }, tickDuration)
-    return interval
-
-
+   
+    
 }
