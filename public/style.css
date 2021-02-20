@@ -1,2 +1,19 @@
-h1 {text-align:center;}
-a {color :#1DA1F2}
+h1 {
+    text-align:center;
+}
+
+a {
+    color :#1DA1F2;
+}
+
+body {
+    background-color: black;
+    color:#d9d9d9;
+    fill:#d9d9d9;
+}
+.mention {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    fill: #6e766d;
+    /* fill:rgb(110, 118, 125); */
+}

@@ -208,11 +208,11 @@ function createBarChartRace(data, top_n, tickDuration) {
         .data(row_data, d => d.key)
         .enter()
         .append('text')
-        .attr('class', 'label')
+        .attr('class', 'label mention')
         // .attr('x', d => x(d.value) - 8)  //<-- por isso ele desliza
         .attr('y', d => y(d.rank) + ((y(1) - y(0)) / 2) + 1)
         .style('text-anchor', 'end')
-        .html(d => d.key); //<-- conteudo
+        .html(d => '@'+d.key); //<-- conteudo
 
     svg.selectAll('text.valueLabel')
         .data(row_data, d => d.key)
@@ -289,11 +289,11 @@ function createBarChartRace(data, top_n, tickDuration) {
         let labels = svg.selectAll('.label').data(row_data, d => d.key);
 
         labels.enter().append('text')
-            .attr('class', 'label')
+            .attr('class', 'label mention')
             .attr('x', d => x(d.value) - 8)
             .attr('y', d => y(top_n + 1) + ((y(1) - y(0)) / 2))
             .style('text-anchor', 'end')
-            .html(d => d.key)
+            .html(d => '@'+d.key)
             .transition()
             .duration(tickDuration)
             .ease(d3.easeLinear)
