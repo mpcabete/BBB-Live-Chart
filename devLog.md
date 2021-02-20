@@ -49,6 +49,7 @@
     []trocar nomes time e row_data
 -dei uma geralzinha no codigo, resolvi varios bug q surgiram
     []arrumar o top_n
+    []resolver bug do undefined
 
 =======================================================================
 [x]decidir se dexo 1 info por dia ou em outro intervalo

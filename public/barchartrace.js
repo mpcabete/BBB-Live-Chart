@@ -360,7 +360,7 @@ function createBarChartRace(data, top_n, tickDuration) {
     // loop
     let i = 1;
     let interval = d3.interval((e) => { //For + sleep
-        if (i == data.length-1) interval.stop()
+        if (i == normalizedData.length-1) interval.stop()
 
         let {date,values} = getRowData(normalizedData, i);
 
