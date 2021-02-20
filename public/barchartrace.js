@@ -142,6 +142,7 @@ function createBarChartRace(data, top_n, tickDuration) {
     const color_scale = d3.scaleOrdinal(d3.schemeSet3);
 
     column_names.forEach((name, i) => {
+        // colors[name]='#1DA1F2'
         colors[name] = color_scale(i)
     });
 
