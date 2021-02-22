@@ -9,7 +9,8 @@
    } else if (sOrientation === "portrait-secondary" || sOrientation === "portrait-primary") {
        document.querySelector('h1').innerText = "Por favor coloque o celular de lado"
        window.onorientationchange = function(event) {
-        document.querySelector('h1').innerText = "test"
+        document.querySelector('h1').innerText = "arigatô"
+        location.reload();
       };
      console.log("Mmmh... you should rotate your device to landscape");
    } else if (sOrientation === undefined) {
