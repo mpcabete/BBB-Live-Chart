@@ -95,7 +95,7 @@
 
 [x]criar .env
 [x]upar em um server
-[]fixar aspect ratio
+[x]fixar aspect ratio
 
 
 -extras:
@@ -106,8 +106,8 @@
     []embbed,gif,video,etc
     []colocar infos
         -ultima data checada por ex
-        -minhas infos
+        -minhas infos 
     []deixar uma animação dele subindo devagarinho falsa quanto terminar a a nimaçao
-    []tirar os com value 0 do grafico
+    [x]tirar os com value 0 do grafico
     []colocar um mostradorzinho com a data q vai movendo pela timeline
     
