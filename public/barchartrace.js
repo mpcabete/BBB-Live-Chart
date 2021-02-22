@@ -2,6 +2,17 @@ function createBarChartRace(data, top_n, tickDuration) {
     // data: [...,{date:Date,[key:value,...]},...]
     var data = data;
 
+    var locale = d3.timeFormatLocale({
+        "dateTime": "%A, %e de %B de %Y. %X",
+        "date": "%d/%m/%Y",
+        "time": "%H:%M:%S",
+        "periods": ["AM", "PM"],
+        "days": ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"],
+        "shortDays": ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+        "months": ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        "shortMonths": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"]
+      });
+
     function generateKeyframes(data) {
         // criarScale pra cada pessoa
         // separar um array de datas e dos valores correspondentes
@@ -72,7 +83,7 @@ function createBarChartRace(data, top_n, tickDuration) {
     let chartDiv = document.getElementById("chartDiv");
     chartDiv.textContent = '';
     let width = chartDiv.clientWidth;
-    let height = chartDiv.clientHeight - 50;
+    let height = width/3;
 
     let svg = d3.select(chartDiv).append("svg")
         .attr("width", width)
@@ -240,7 +251,7 @@ function createBarChartRace(data, top_n, tickDuration) {
         .attr('x', width - margin.right)
         .attr('y', height - margin.bottom - 5)
         .style('text-anchor', 'end')
-        .html(d3.timeFormat("%B %d, %Y")(time));
+        .html(locale.format("%B %d, %Y")(time));
 
     // draw the updated graph with transitions
     function drawGraph(time,row_data) {
@@ -362,24 +373,21 @@ function createBarChartRace(data, top_n, tickDuration) {
         //     d3.select('.timeText').html(d3.timeFormat("%B %d, %Y")(time))
         // timeText.html(d3.timeFormat("%B %d, %Y")(time))
         // })
-        timeText.html(d3.timeFormat("%B %d, %Y")(time))
+        timeText.html(locale.format("%B %d, %Y")(time))
 
     }
 
     // loop
     let i = 1;
     let interval = d3.interval((e) => { //For + sleep
-        if (i == normalizedData.length-1) interval.stop()
-
+        if (refresh){i=0;refresh=false}
+        if (i == normalizedData.length) {
+            return
+        }
         let {date,values} = getRowData(normalizedData, i);
-
-        drawGraph(date,values);
-
-        i += 1
-
-
-        return interval
+            drawGraph(date,values);
+            i += 1
     }, tickDuration)
    
-    
+
 }

@@ -1,4 +1,4 @@
-   
+   let refresh = false
     async function main() {
         // let chartDiv = document.getElementById("chartDiv")
         const api_data = await (await fetch('api')).text()
@@ -9,14 +9,18 @@
                 
             })
         })
-   
     
-    const top_n = 14
-    const tickDuration = 200
+        const top_n = 14
+        const tickDuration = 200
 
-window.onload = createBarChartRace(data, top_n, tickDuration);
+        
+window.onload = createBarChartRace(data, top_n, tickDuration)
+// setTimeout(chart.stop(),1000)
 
 } 
+function rButton(){
+refresh = true
+}
 
-main()
 
+main  ()

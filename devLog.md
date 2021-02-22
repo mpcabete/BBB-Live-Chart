@@ -62,6 +62,12 @@
     -.duration(tickDuration-50)
 [x]ver pq na função dos keyframes ele n cria até o ultimo
     - >= no for loop
+
+========================================================================(22/2)
+-adicionei botao de reiniciar
+-coloquei data em pt-br
+-fixei aspect ratio
+
 =======================================================================
 [x]decidir se dexo 1 info por dia ou em outro intervalo
     -2h
@@ -89,6 +95,7 @@
 
 [x]criar .env
 [x]upar em um server
+[]fixar aspect ratio
 
 
 -extras:
