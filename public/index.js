@@ -1,4 +1,22 @@
    let refresh = false
+
+   var sOrientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
+
+   if (sOrientation === "landscape-primary") {
+     console.log("That looks good.");
+   } else if (sOrientation === "landscape-secondary") {
+     console.log("Mmmh... the screen is upside down!");
+   } else if (sOrientation === "portrait-secondary" || sOrientation === "portrait-primary") {
+       document.querySelector('h1').innerText = "Por favor coloque o celular de lado"
+       window.onorientationchange = function(event) {
+        document.querySelector('h1').innerText = "test"
+      };
+     console.log("Mmmh... you should rotate your device to landscape");
+   } else if (sOrientation === undefined) {
+     console.log("The orientation API isn't supported in this browser :(");
+   }
+   
+
     async function main() {
         // let chartDiv = document.getElementById("chartDiv")
         const api_data = await (await fetch('api')).text()
