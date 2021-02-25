@@ -236,7 +236,6 @@ function createBarChartRace(data, top_n, tickDuration) {
 
         timeline_svg.append('rect')
         .attr('class', 'progressBar')
-        .attr('fill','#1DA1F2')
         .attr('transform', `translate(${marginTimeAxis}, 20)`)
         .attr('height', 5)
         .attr('width', 0);

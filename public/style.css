@@ -5,26 +5,26 @@ h1 {
 }
 
 .twitter {
-    color :#1DA1F2;
+    color :#a8dadc;
 }
 
 body {
-    background-color: black;
-    color: #d9d9d9;
-    fill: #d9d9d9;
+    background-color: #1d3557;
+    color: #f1faee;
+    fill: #f1faee;
 }
 
 
 .mention {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-weight: 400;
-    fill: #6e766d;
+    fill: #f1faee;
     /* fill:rgb(110, 118, 125); */
 }
 
 .button {
     background-color: transparent;
-    fill: #1DA1F2;
+    fill: #A8DADC;
     margin-left: 15em;
     margin-top: 15px;
     margin-bottom: -2%;
@@ -37,19 +37,24 @@ body {
 }
 
 .button:hover {
-    fill: #61BDF6;
+    fill: #F1FAEE;
     transform: rotate(180deg);
 }
 
 .button:active {
-    fill: #1DA1F2;
+    fill: #457B9D;
     transform: rotate(0deg)
 }
 
 .timeText {
     font-size: 180%;
 }
-
+.progressBar {
+    fill:#e63946;
+}
+.ticks{
+    fill:#457b9d
+}
 
 .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out

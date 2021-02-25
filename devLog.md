@@ -67,6 +67,11 @@
 -adicionei botao de reiniciar
 -coloquei data em pt-br
 -fixei aspect ratio
+-dei uma divulgada
+
+========================================================================24/2
+-criei conta adsense
+-mudei cores
 
 =======================================================================
 [x]decidir se dexo 1 info por dia ou em outro intervalo
