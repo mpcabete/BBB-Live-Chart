@@ -5,13 +5,10 @@
 
 h1 {
     text-align: center;
-    padding-top: 3em;
-    margin-bottom: 2em;
+    padding-top: 1em;
+    margin-bottom: 1.5em;
 }
 
-.twitter {
-    color :#a8dadc;
-}
 
 body {
     background-color: #1d3557;
@@ -20,7 +17,16 @@ body {
     font-family: gotham,sans-serif;
 }
 
+#chartDiv{
+    height: 40em;
+    width:auto; 
+    /* overflow:scroll; */
+}
 
+.twitter {
+    color :#a8dadc;
+}
+    
 .mention {
     font-weight: 400;
     fill: #f1faee;
@@ -39,6 +45,11 @@ body {
 
     display: block;
 
+}
+.button__svg {
+    width:2em;
+    height:2em;
+    
 }
 
 .button:hover {
@@ -90,5 +101,18 @@ body {
 
     .github-corner .octo-arm {
         animation: octocat-wave 560ms ease-in-out
+    }
+}
+
+@media(max-width:500px){
+    #chartDiv{
+        width: 40em;
+    }
+    .timeText {
+        font-size: 2em;
+    }
+
+    .timeline_svg .tick text{
+        display: none;
     }
 }

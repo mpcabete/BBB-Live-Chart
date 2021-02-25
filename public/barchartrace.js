@@ -83,24 +83,30 @@ function createBarChartRace(data, top_n, tickDuration) {
     let chartDiv = document.getElementById("chartDiv");
     chartDiv.textContent = '';
     let width = chartDiv.clientWidth;
-    let height = width/3;
+    // let width = 2560
+    // let height = 720
+    let height = chartDiv.clientHeight;
+    console.log('width: ',width,'heigth',height)
 
     let svg = d3.select(chartDiv).append("svg")
         .attr("width", width)
         .attr("height", height);
 
     let timeline_svg = d3.select(chartDiv).append("svg")
+        .attr("class", "timeline_svg")
         .attr("width", width)
         .attr("height", 50);
 
     const margin = {
         top: 50,
-        right: 200,
-        bottom: 50,
-        left: 200
+        // right:200,
+        right: parseInt(0.12*width+55),
+        bottom: 2,
+        left: parseInt(0.11*width+80)
+        // left:200
     };
 
-    const marginTimeAxis = 200;
+    const marginTimeAxis = margin.left;
 
     let barPadding = (height - (margin.bottom + margin.top)) / (top_n * 5);
 
@@ -167,7 +173,8 @@ function createBarChartRace(data, top_n, tickDuration) {
   const [start_date, end_date] = d3.extent(data.map(x=>x.date))
     let t = d3.scaleTime()
         .domain([new Date(start_date), new Date(end_date)])
-        .range([margin.left + marginTimeAxis, width - margin.right]);
+        .range([margin.left , width - margin.right]);
+        // + marginTimeAxis
 
 
     let timeAxis = d3.axisBottom()

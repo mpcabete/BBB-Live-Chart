@@ -72,6 +72,12 @@
 ========================================================================24/2
 -criei conta adsense
 -mudei cores
+-mudei fonte
+-comecei a mexer na disposição zuada em mobile
+    -margin tava hardcoded, coloquei em porcentagem
+    -coloquei largura mínima pro grafico
+    -coloquei altura fixa em em
+
 
 =======================================================================
 [x]decidir se dexo 1 info por dia ou em outro intervalo
