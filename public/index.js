@@ -3,9 +3,9 @@
    //    se tiver no celular em pé pede pra virar e atualiza 
    var sOrientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
    if (sOrientation === "portrait-secondary" || sOrientation === "portrait-primary") {
-       document.querySelector('h1').innerText = "Por favor coloque o celular de lado (a versão de cel ta meio porca ainda, sorry)"
+    //    document.querySelector('h1').innerText = "Por favor coloque o celular de lado (a versão de cel ta meio porca ainda, sorry)"
        window.onorientationchange = function (event) {
-           document.querySelector('h1').innerText = "arigatô"
+        //    document.querySelector('h1').innerText = "arigatô"
            location.reload();
        };
    }
