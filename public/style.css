@@ -5,8 +5,8 @@
 
 h1 {
     text-align: center;
-    margin-bottom: 2%;
-    padding-top: 4%;
+    padding-top: 3em;
+    margin-bottom: 2em;
 }
 
 .twitter {
@@ -30,9 +30,9 @@ body {
 .button {
     background-color: transparent;
     fill: #A8DADC;
-    margin-left: 15em;
-    margin-top: 15px;
-    margin-bottom: -2%;
+    margin-left: 16em;
+    margin-top: 1em;
+    margin-bottom: -1.5em;
     border: none;
     transform: rotate(60deg);
     transition-duration: 0.4s;
@@ -52,7 +52,7 @@ body {
 }
 
 .timeText {
-    font-size: 180%;
+    font-size: 3em;
 }
 .progressBar {
     fill:#e63946;
