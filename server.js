@@ -27,6 +27,10 @@ async function query(){
 
 }
 
+app.get('/',(req,res)=>{
+    res.redirect("/seguidores-BBB-21.html")
+})
+
 app.get('/api',async (req,res)=>{
     res.json(await query())
 })
