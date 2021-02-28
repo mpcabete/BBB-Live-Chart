@@ -78,6 +78,11 @@
     -coloquei largura mínima pro grafico
     -coloquei altura fixa em em
 
+=======================================================================27/2
+-funcionalidade de clickar na linha do tempo
+-coloquei transformei função em modulo
+-colocar loop e eventos no index ou outro modulo
+
 
 =======================================================================
 [x]decidir se dexo 1 info por dia ou em outro intervalo

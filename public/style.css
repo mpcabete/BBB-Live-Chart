@@ -76,6 +76,10 @@ body {
     animation: octocat-wave 560ms ease-in-out
 }
 
+.timeline_svg{
+    cursor: pointer;
+}
+
 @keyframes octocat-wave {
 
     0%,

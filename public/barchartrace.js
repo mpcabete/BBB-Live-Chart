@@ -1,4 +1,4 @@
-function createBarChartRace(data, top_n, tickDuration) {
+export function createBarChartRace(data, top_n, tickDuration) {
     // data: [...,{date:Date,[key:value,...]},...]
     var data = data;
 
@@ -20,6 +20,9 @@ function createBarChartRace(data, top_n, tickDuration) {
         //um array com todos os valores pra cada 1
         let ranges = {}
         let domain = []
+        let entry
+        let user
+
         for (entry of data) {
             domain.push(new Date(entry.date))
             for (user of entry.users) {
@@ -86,7 +89,7 @@ function createBarChartRace(data, top_n, tickDuration) {
     // let width = 2560
     // let height = 720
     let height = chartDiv.clientHeight;
-    console.log('width: ',width,'heigth',height)
+
 
     let svg = d3.select(chartDiv).append("svg")
         .attr("width", width)
@@ -125,7 +128,7 @@ function createBarChartRace(data, top_n, tickDuration) {
         // });
         //sort e tira os q n entrar no top n
 
-        out = data.sort((a, b) => parseInt(b.value) - parseInt(a.value))
+        let out = data.sort((a, b) => parseInt(b.value) - parseInt(a.value))
             .slice(0, top_n)
             .filter(x => parseInt(x.value) > 0)
             .map((d, i) => {
@@ -383,9 +386,23 @@ function createBarChartRace(data, top_n, tickDuration) {
 
     }
 
-    // loop
+   
+    function setTimeEvent(){
+        const timeline = document.querySelector(".timeline_svg")
+        timeline.addEventListener("mousedown",event=>{
+            const clickDate =  t.invert(event.clientX)
+            const clickFrame = Math.round(timeScale(clickDate))
+            i = clickFrame
+
+        })
+    }
+
+    setTimeEvent()
+    let refresh = false
+     document.querySelector('.button').addEventListener ('mousedown',()=>refresh = true)
+     // loop
     let i = 1;
-    let interval = d3.interval((e) => { //For + sleep
+    d3.interval((e) => { //For + sleep
         if (refresh){i=0;refresh=false}
         if (i == normalizedData.length) {
             return

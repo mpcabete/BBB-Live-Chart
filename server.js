@@ -3,12 +3,21 @@ const express = require('express')
 const morgan = require('morgan')
 const MongoClient = require('mongodb').MongoClient;
 
+
 const credentials = process.env.MONGO_CREDENTIALS
 const port = process.env.PORT || 3000
 const uri = `mongodb+srv://${credentials}@twittercluster.au6dy.mongodb.net/test?retryWrites=true&w=majority`;
 
 const app = express()
 app.use(morgan('common'))
+
+
+// app.use(function (req, res, next) {
+//     res.type(req.path)
+//     next()
+//   })
+
+
 app.use(express.static('public'))
 
 const client = new MongoClient(uri, {useUnifiedTopology: true, useNewUrlParser: true });
