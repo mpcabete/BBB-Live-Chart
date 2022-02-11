@@ -149,10 +149,11 @@ export function createBarChartRace(data, top_n, tickDuration) {
   let timeAxis = d3
     .axisBottom()
     //colocar ticks = dias
-    .ticks(d3.timeHour.every(24))
+    //.ticks(d3.timeHour.every(24))
+    .ticks(32)
     .tickFormat((d, i) => {
       if (i % 3 == 0) {
-        return d3.timeFormat("%d/%m")(d);
+        return d3.timeFormat("%d/%m/%y")(d);
       }
     })
     .scale(t);

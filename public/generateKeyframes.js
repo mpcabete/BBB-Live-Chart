@@ -82,8 +82,7 @@
 
             const estimatedValue = d3.scaleLinear([lValid.i, nValid.i],[lValid.v, nValid.v])(i)
 
-            obj[key]=parseInt(estimatedValue)
-            //TODO remove parseint
+            obj[key]=estimatedValue
 
           }
           else{
