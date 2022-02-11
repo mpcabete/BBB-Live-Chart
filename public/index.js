@@ -1,5 +1,4 @@
 import { createBarChartRace } from '/barchartrace.js'
-import {csvParse} from "https://cdn.skypack.dev/d3-dsv@3";
    
 
    //    se tiver no celular em pé pede pra virar e atualiza 
@@ -14,22 +13,18 @@ import {csvParse} from "https://cdn.skypack.dev/d3-dsv@3";
 
    // funçao assincrona pra fazer o request na api
    async function main() {
-       console.log('csvParse',csvParse)
-
        // let chartDiv = document.getElementById("chartDiv")
-       const csvData = await (await fetch('data/poverty-sa.csv')).text()
-       const data = csvParse(csvData)
-       //const api_data = await (await fetch('api')).text()
-       //const data = await JSON.parse(api_data)
+       const api_data = await (await fetch('api')).text()
+       const data = await JSON.parse(api_data)
        //    no bd tem usernames com e sem @
-       //data.forEach(x => {
-           //x.users.forEach(y => {
-               //y.username = y.username.replace('@', '')
+       data.forEach(x => {
+           x.users.forEach(y => {
+               y.username = y.username.replace('@', '')
 
-           //})
-       //})
+           })
+       })
 
-       const top_n = 7
+       const top_n = 14
        const tickDuration = 200
 
 
