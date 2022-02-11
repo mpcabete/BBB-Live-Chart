@@ -72,7 +72,6 @@
 
     function fillInvalidData(data){
       const last = {}
-      console.log('last',last)
       const ndata = data.map((entry, i, xs) => {
         const obj = {}
         for (const key in entry){
@@ -82,10 +81,9 @@
             const nValid = getNextValid(xs,i,x=>x[key])
 
             const estimatedValue = d3.scaleLinear([lValid.i, nValid.i],[lValid.v, nValid.v])(i)
-            console.log('estimatedValue',estimatedValue)
 
             obj[key]=parseInt(estimatedValue)
-            //TODO remove
+            //TODO remove parseint
 
           }
           else{
@@ -102,13 +100,13 @@
     }
 
     function getTimeDomainAndRanges(data){
-      console.log('data',data.map(x=>x['Costa Rica']))
+      //console.log('data',data.map(x=>x['Costa Rica']))
         let ranges = {};
         let domain = [];
 
       const ndata = fillInvalidData(data)
 
-      console.log('ndata',ndata.map(x=>x['Costa Rica']))
+      //console.log('ndata',ndata.map(x=>x['Costa Rica']))
 
         ndata.forEach((entry) => {
           //const entry = data[i]

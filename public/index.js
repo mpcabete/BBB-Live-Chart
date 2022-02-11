@@ -29,7 +29,7 @@ import {csvParse} from "https://cdn.skypack.dev/d3-dsv@3";
            //})
        //})
 
-       const top_n = 7
+       const top_n = 10
        const tickDuration = 200
 
 

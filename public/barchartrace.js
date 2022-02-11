@@ -1,4 +1,4 @@
-import { generateKeyframes } from './generateKeyframes.js'
+import { generateKeyframes } from "./generateKeyframes.js";
 export function createBarChartRace(data, top_n, tickDuration) {
   // data: [...,{date:Date,[key:value,...]},...]
   var data = data;
@@ -48,8 +48,11 @@ export function createBarChartRace(data, top_n, tickDuration) {
     ],
   });
 
-
+  console.log("generating keyframes...");
   const { keyframes: normalizedData, timeScale } = generateKeyframes(data);
+  console.log("done.");
+  //console.log('timeScale',timeScale)
+  //console.log('normalizedData',JSON.stringify(normalizedData))
 
   let chartDiv = document.getElementById("chartDiv");
   chartDiv.textContent = "";
@@ -132,6 +135,7 @@ export function createBarChartRace(data, top_n, tickDuration) {
   });
 
   // draw the first frame
+  console.log("draw");
 
   let { date: time, values: row_data } = getRowData(normalizedData, 0);
 
@@ -380,6 +384,8 @@ export function createBarChartRace(data, top_n, tickDuration) {
     .querySelector(".button")
     .addEventListener("mousedown", () => (refresh = true));
   // loop
+  console.log("loop");
+  //const renderedData = []
   let i = 1;
   d3.interval((e) => {
     //For + sleep
@@ -388,9 +394,11 @@ export function createBarChartRace(data, top_n, tickDuration) {
       refresh = false;
     }
     if (i == normalizedData.length) {
+      //console.log('renderedData',renderedData)
       return;
     }
     let { date, values } = getRowData(normalizedData, i);
+    //renderedData.push({ date, values })
     drawGraph(date, values);
     i += 1;
   }, tickDuration);
